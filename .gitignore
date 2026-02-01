@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.eggs/
+*.db
+ml/model/classifier.joblib
+ml/model/vectorizer.joblib
+ml/model/metrics.json
+data/combined_dataset.csv
+.ruff_cache/
+.pytest_cache/
+.venv/
+venv/
+.streamlit/

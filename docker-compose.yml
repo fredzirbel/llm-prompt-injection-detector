@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    environment:
+      - DETECTOR_DB_PATH=/data/detector_results.db
+      - DETECTOR_MODEL_PATH=ml/model/classifier.joblib
+      - DETECTOR_VECTORIZER_PATH=ml/model/vectorizer.joblib
+    volumes:
+      - detector_data:/data
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - DETECTOR_DB_PATH=/data/detector_results.db
+    volumes:
+      - detector_data:/data
+    depends_on:
+      - api
+
+volumes:
+  detector_data:

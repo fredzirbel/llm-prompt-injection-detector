@@ -2,6 +2,38 @@
 
 A multi-layered detection API that identifies prompt injection attacks against LLM endpoints using regex pattern matching, statistical heuristic analysis, and a trained ML classifier. Returns categorized, explainable verdicts with SIEM-ready structured logging and a monitoring dashboard.
 
+---
+
+## Demo
+
+### API Documentation (auto-generated OpenAPI)
+
+<p align="center">
+  <img src="docs/images/api-overview.png" alt="Swagger UI — API Overview" width="800">
+</p>
+
+### Injection Detection in Action
+
+| Malicious Prompt (97% confidence) | Clean Prompt |
+|:---:|:---:|
+| <img src="docs/images/malicious-detection.png" alt="Malicious prompt detected" width="500"> | <img src="docs/images/clean-detection.png" alt="Clean prompt passed" width="500"> |
+
+### Monitoring Dashboard (Streamlit)
+
+<p align="center">
+  <img src="docs/images/dashboard-overview.png" alt="Dashboard — Detection Overview" width="800">
+</p>
+
+<p align="center">
+  <img src="docs/images/dashboard-patterns.png" alt="Dashboard — Pattern Analysis" width="800">
+</p>
+
+<p align="center">
+  <img src="docs/images/dashboard-recent.png" alt="Dashboard — Recent Detections" width="800">
+</p>
+
+---
+
 ## Features
 
 - **3 detection layers** — regex patterns, statistical heuristics, ML classifier (TF-IDF + Logistic Regression)
